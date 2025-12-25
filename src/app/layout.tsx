@@ -19,8 +19,11 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Velocity - Product Engineering Engine",
+  title: "Bryce Digital | Operational Systems",
   description: "Systems Defined By Data",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
