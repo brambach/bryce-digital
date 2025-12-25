@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bryce Digital: Operational Systems
 
-## Getting Started
+Bryce Digital builds **operational frontends** — high-fidelity web interfaces that act as automation hubs, syncing data directly with existing stacks like NetSuite, Salesforce, and Stripe.
 
-First, run the development server:
+## 🚀 The Philosophy: Beyond Digital Brochures
 
+Most websites are passive objects. We build active parts of your workflow. We specialize in:
+- **Real-time Sync**: Direct connectivity with ERPs and CRMs.
+- **High-Fidelity Engineering**: Cinematic animations and low-latency interaction.
+- **Automation Hubs**: Turning the frontend into a trigger for business logic.
+
+---
+
+## 🛠 Tech Stack
+
+- **Core**: Next.js 16 (App Router), React 19, TypeScript
+- **Styling**: Tailwind CSS 4 (Custom design system)
+- **Animations**: Framer Motion (High-fidelity scroll-driven & interactive)
+- **Backend/Hooks**: Supabase (Edge Functions, JWT Auth)
+- **Integrations**: Resend API, NetSuite, Oracle, Salesforce
+
+---
+
+## 💎 Key Components
+
+### 1. Hero Interface
+A professional, engineering-focused cockpit featuring a terminal emulator, interactive system stats, and a high-end "Initialize Audit" shimmer.
+- **Refinement**: Optimized for mobile with a compact square aspect ratio and logic-driven element reordering.
+
+### 2. Isometric Process
+Visual representation of system connectivity with animated SVG "live wires."
+- **Interaction**: Features persistent selection states for mobile touch feedback with yellow glow highlighting.
+
+### 3. Bento Grid (Core Protocols)
+A premium display of service offerings with high-fidelity visuals.
+- **Interaction**: Implements persistent yellow border glow states across all cards on mobile tap.
+
+### 4. Integration Marquee
+High-speed infinite scroll of supported technologies.
+- **Customization**: Combined "Oracle NetSuite" grouping with custom SVG pathing.
+
+---
+
+## 📡 Backend Architecture
+
+### Contact Form & SMTP
+- **Edge Deployment**: Supabase Edge Functions manage the `send-contact-email` logic.
+- **Security**: Uses JWT-based Legancy Anon keys for frontend-to-edge authentication.
+- **Provider**: Integrated with Resend for high-deliverability email routing.
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+- Node.js 20+
+- Supabase CLI (for local edge function development)
+
+### Local Development
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Local Supabase development
+supabase start
+supabase functions serve send-contact-email --no-verify-jwt
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Config
+Required `.env.local` keys:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚡ Deployment
 
-## Learn More
+The frontend is optimized for **Vercel** deployment, utilizing the Latest Next.js features for static generation and server-side rendering. The backend functions are deployed via **Supabase CLI**:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+supabase functions deploy send-contact-email
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Designed & Engineered by Bryce Digital.*
