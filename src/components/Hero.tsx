@@ -7,7 +7,7 @@ import { useState } from "react";
 export function Hero() {
     const [activeStat, setActiveStat] = useState(0);
     return (
-        <main className="flex-grow grid grid-cols-1 lg:grid-cols-12 lg:px-12 mt-12 mb-20 lg:my-32 relative gap-x-12 gap-y-12 lg:gap-y-16">
+        <main className="flex-grow grid grid-cols-1 lg:grid-cols-12 lg:px-12 mt-32 mb-20 lg:my-32 relative gap-x-12 gap-y-12 lg:gap-y-16">
             {/* Left: Typography */}
             <div className="lg:col-span-5 flex flex-col justify-center z-20 relative px-6 lg:px-0">
                 <motion.h1
