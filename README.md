@@ -1,89 +1,64 @@
-# Bryce Digital: Operational Systems
+# 
 
-Bryce Digital builds **operational frontends** — high-fidelity web interfaces that act as automation hubs, syncing data directly with existing stacks like NetSuite, Salesforce, and Stripe.
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0A0A0A&height=180&section=header&text=BRYCE%20DIGITAL&fontSize=70&fontColor=FACC15&fontAlign=50&fontAlignY=40&desc=OPERATIONAL%20WEB%20INFRASTRUCTURE&descAlign=50&descAlignY=65&descSize=20&descColor=ffffff" width="100%" />
 
-## 🚀 The Philosophy: Beyond Digital Brochures
+  <br/>
 
-Most websites are passive objects. We build active parts of your workflow. We specialize in:
-- **Real-time Sync**: Direct connectivity with ERPs and CRMs.
-- **High-Fidelity Engineering**: Cinematic animations and low-latency interaction.
-- **Automation Hubs**: Turning the frontend into a trigger for business logic.
+  [![System Status](https://img.shields.io/badge/SYSTEM_STATUS-OPERATIONAL-22c55e?style=for-the-badge&logo=statuspage&logoColor=white)](https://brycedigital.com)
+  [![Vercel](https://img.shields.io/badge/DEPLOYMENT-VERCEL-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
+  [![License](https://img.shields.io/badge/LICENSE-PROPRIETARY-FACC15?style=for-the-badge&labelColor=000000&logoColor=000000)](https://brycedigital.com)
 
----
-
-## 🛠 Tech Stack
-
-- **Core**: Next.js 16 (App Router), React 19, TypeScript
-- **Styling**: Tailwind CSS 4 (Custom design system)
-- **Animations**: Framer Motion (High-fidelity scroll-driven & interactive)
-- **Backend/Hooks**: Supabase (Edge Functions, JWT Auth)
-- **Integrations**: Resend API, NetSuite, Oracle, Salesforce
+  <br/>
+  
+  <p align="center">
+    <strong>Hardwired frontends. Automated backends. Zero latency.</strong>
+  </p>
+</div>
 
 ---
 
-## 💎 Key Components
+## 📡 System Overview
 
-### 1. Hero Interface
-A professional, engineering-focused cockpit featuring a terminal emulator, interactive system stats, and a high-end "Initialize Audit" shimmer.
-- **Refinement**: Optimized for mobile with a compact square aspect ratio and logic-driven element reordering.
+**Bryce Digital** engineers **operational frontends**—high-fidelity interfaces that act as automation hubs for modern business. Unlike passive "brochure" websites, this system is hardwired directly into the operational stack (NetSuite, Stripe, Salesforce) to act as a real-time command center.
 
-### 2. Isometric Process
-Visual representation of system connectivity with animated SVG "live wires."
-- **Interaction**: Features persistent selection states for mobile touch feedback with yellow glow highlighting.
+> "We don't just build websites; we build the digital infrastructure that powers your revenue."
 
-### 3. Bento Grid (Core Protocols)
-A premium display of service offerings with high-fidelity visuals.
-- **Interaction**: Implements persistent yellow border glow states across all cards on mobile tap.
-
-### 4. Integration Marquee
-High-speed infinite scroll of supported technologies.
-- **Customization**: Combined "Oracle NetSuite" grouping with custom SVG pathing.
+### ⚡ Core Capabilities
+* **Real-time Synchronization:** Bi-directional data flow with Enterprise ERPs.
+* **Cinematic Engineering:** Framer Motion-driven interactions with 60fps performance.
+* **System Interaction Panels:** Custom modal logic for technical deep-dives without navigating away.
+* **Edge-Computed Logic:** Serverless form handling via Supabase Edge Functions.
 
 ---
 
-## 📡 Backend Architecture
+## 🛠 Technical Specifications
 
-### Contact Form & SMTP
-- **Edge Deployment**: Supabase Edge Functions manage the `send-contact-email` logic.
-- **Security**: Uses JWT-based Legancy Anon keys for frontend-to-edge authentication.
-- **Provider**: Integrated with Resend for high-deliverability email routing.
-
----
-
-## 📦 Getting Started
-
-### Prerequisites
-- Node.js 20+
-- Supabase CLI (for local edge function development)
-
-### Local Development
-```bash
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-
-# Local Supabase development
-supabase start
-supabase functions serve send-contact-email --no-verify-jwt
-```
-
-### Environment Config
-Required `.env.local` keys:
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+| Category | Technology | Protocol / Usage |
+| :--- | :--- | :--- |
+| **Core Engine** | ![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=flat-square&logo=nextdotjs&logoColor=white) | App Router, Server Components |
+| **Language** | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) | Strict Typing, Data Safety |
+| **Styling** | ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) | Custom Design System, Glassmorphism |
+| **Motion** | ![Framer](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white) | Scroll-driven animations, Layout Id |
+| **Backend** | ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white) | Database, Auth, Edge Functions |
+| **Comms** | ![Resend](https://img.shields.io/badge/Resend-000000?style=flat-square&logo=resend&logoColor=white) | Transactional Email API |
 
 ---
 
-## ⚡ Deployment
+## 📐 Architecture Diagram
 
-The frontend is optimized for **Vercel** deployment, utilizing the Latest Next.js features for static generation and server-side rendering. The backend functions are deployed via **Supabase CLI**:
+This system utilizes a **Composable Architecture** to ensure security and speed. API keys never touch the client-side.
 
-```bash
-supabase functions deploy send-contact-email
-```
-
----
-
-*Designed & Engineered by Bryce Digital.*
+```mermaid
+graph LR
+    A[Client / Frontend] -->|Transmit Data| B{Supabase Gateway}
+    B -->|Authenticate| C[Edge Function]
+    C -->|Secure Injection| D((Environment Variables))
+    C -->|Payload| E[Resend API]
+    E -->|Delivery| F[Operations Inbox]
+    
+    style A fill:#0A0A0A,stroke:#FACC15,stroke-width:2px,color:#fff
+    style B fill:#0A0A0A,stroke:#3ECF8E,stroke-width:2px,color:#fff
+    style C fill:#0A0A0A,stroke:#FACC15,stroke-width:2px,color:#fff
+    style E fill:#000,stroke:#fff,stroke-width:2px,color:#fff
+    style F fill:#FACC15,stroke:#000,stroke-width:2px,color:#000
