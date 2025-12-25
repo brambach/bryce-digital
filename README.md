@@ -1,18 +1,26 @@
 # 
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0A0A0A&height=180&section=header&text=BRYCE%20DIGITAL&fontSize=70&fontColor=FACC15&fontAlign=50&fontAlignY=40&desc=OPERATIONAL%20WEB%20INFRASTRUCTURE&descAlign=50&descAlignY=65&descSize=20&descColor=ffffff" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0A0A0A&height=220&section=header&text=BRYCE%20DIGITAL&fontSize=70&fontColor=FACC15&fontAlign=50&fontAlignY=42&desc=OPERATIONAL%20WEB%20INFRASTRUCTURE&descAlign=50&descAlignY=62&descSize=20&descColor=A3A3A3&stroke=FACC15&strokeWidth=1&animation=fadeIn" width="100%" alt="Bryce Digital Header" />
 
   <br/>
+  <br/>
 
-  [![System Status](https://img.shields.io/badge/SYSTEM_STATUS-OPERATIONAL-22c55e?style=for-the-badge&logo=statuspage&logoColor=white)](https://brycedigital.com)
-  [![Vercel](https://img.shields.io/badge/DEPLOYMENT-VERCEL-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
-  [![License](https://img.shields.io/badge/LICENSE-PROPRIETARY-FACC15?style=for-the-badge&labelColor=000000&logoColor=000000)](https://brycedigital.com)
+  <a href="https://brycedigital.io">
+    <img src="https://img.shields.io/badge/SYSTEM_STATUS-OPERATIONAL-22c55e?style=for-the-badge&logo=statuspage&logoColor=white" alt="System Operational" />
+  </a>
+  <a href="https://vercel.com">
+    <img src="https://img.shields.io/badge/DEPLOYMENT-VERCEL-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Deployed on Vercel" />
+  </a>
+  <a href="https://brycedigital.io">
+    <img src="https://img.shields.io/badge/LICENSE-PROPRIETARY-FACC15?style=for-the-badge&labelColor=000000&logoColor=000000" alt="Proprietary License" />
+  </a>
 
+  <br/>
   <br/>
   
   <p align="center">
-    <strong>Hardwired frontends. Automated backends. Zero latency.</strong>
+    <samp>Hardwired frontends. Automated backends. Zero latency.</samp>
   </p>
 </div>
 
