@@ -1,6 +1,6 @@
 "use client";
 
-import { Terminal, CircleDot, Circle, CheckCircle2 } from "lucide-react";
+import { Terminal, CircleDot, Circle, CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -14,61 +14,37 @@ export function Hero() {
                     initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="text-5xl md:text-6xl lg:text-[5.5rem] leading-[0.85] uppercase font-medium text-white tracking-tighter mb-6 md:mb-8"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[0.9] lg:leading-[0.85] uppercase font-medium text-white tracking-tighter mb-6 md:mb-8 text-balance"
                 >
-                    Systems<br />
-                    Defined<br />
-                    By<br />
-                    Data
+                    INTEGRATED<br />
+                    WEB<br />
+                    PORTALS
                 </motion.h1>
 
                 <motion.p
                     initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                    className="leading-relaxed text-base md:text-lg font-light text-neutral-400 max-w-md mb-8 md:mb-12"
+                    className="leading-relaxed text-sm md:text-base lg:text-lg font-light text-neutral-400 max-w-md mb-8 md:mb-12"
                 >
-                    We design operational websites that act as automation hubs — syncing directly with tools like NetSuite and Salesforce to eliminate manual data entry and keep systems in real time.
+                    We build customer-facing interfaces that write directly to your ERP. Eliminate manual entry between your website and NetSuite, Salesforce, or Stripe.
                 </motion.p>
 
                 <motion.div
                     initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-                    className="flex flex-col items-start gap-3"
+                    className="flex flex-col items-start gap-4"
                 >
-                    {/* Glowing Shimmer Button */}
-                    <a
-                        href="#audit-section"
-                        className="group isolate inline-flex cursor-pointer overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_8px_rgba(250,204,21,0.35)] rounded-full relative shadow-[0_8px_40px_rgba(250,204,21,0.25)]"
-                    >
-                        {/* Rotating gradient border */}
-                        <div className="absolute inset-0">
-                            <div className="absolute inset-[-200%] w-[400%] h-[400%] animate-[rotate-gradient_4s_linear_infinite]">
-                                <div className="absolute inset-0 bg-[conic-gradient(from_225deg,transparent_0,rgba(250,204,21,0.6)_90deg,transparent_90deg)]"></div>
-                            </div>
-                        </div>
-
-                        {/* Inner backdrop layer */}
-                        <div className="absolute rounded-full bg-[rgba(0,0,0,0.8)] inset-[1px] backdrop-blur"></div>
-
-                        {/* Button content */}
-                        <div className="z-10 flex gap-3 overflow-hidden text-sm font-bold text-white pt-3 pr-5 pb-3 pl-5 relative items-center uppercase tracking-widest">
-                            {/* Rotating beam effect */}
-                            <div className="absolute w-[200%] h-[200%] bg-[linear-gradient(90deg,transparent,rgba(250,204,21,0.2),rgba(250,204,21,0.2),rgba(250,204,21,0.2),transparent)] animate-[borderBeamRotation_4s_infinite_linear] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-
-                            {/* Inner dark background */}
-                            <div className="absolute inset-[1px] bg-[rgba(5,5,5,0.95)] rounded-full backdrop-blur-sm"></div>
-
-                            <span className="whitespace-nowrap relative z-10">Initialize System Audit</span>
-                            <Terminal className="w-[18px] h-[18px] relative z-10" strokeWidth={2} />
-                        </div>
+                    <a href="#audit-section" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FACC15] rounded-sm">
+                        <button className="bg-[#FACC15] text-black font-bold uppercase tracking-widest text-xs py-4 px-8 hover:bg-white transition-all duration-300 font-mono flex items-center gap-2 group cursor-pointer focus-visible:outline-none">
+                            INITIALIZE SYSTEM AUDIT ($997)
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </button>
                     </a>
-
-                    <div className="flex gap-2 text-xs text-neutral-500 font-mono mt-4 gap-x-2 gap-y-2 items-center">
-                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                        SYSTEMS OPERATIONAL
-                    </div>
+                    <p className="text-[10px] text-neutral-400 font-mono uppercase tracking-wide text-balance">
+                        *30-day delivery timeline. Guaranteed operational efficiency.*
+                    </p>
                 </motion.div>
             </div>
 
@@ -133,10 +109,10 @@ export function Hero() {
                 {/* Decorative Elements */}
                 <div className="absolute -right-4 top-1/4 text-neutral-800 text-4xl font-thin">+</div>
                 <div className="absolute -left-4 bottom-1/4 text-neutral-800 text-4xl font-thin">+</div>
-            </motion.div>
+            </motion.div >
 
             {/* Right: Stats */}
-            <motion.div
+            < motion.div
                 initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
@@ -184,7 +160,7 @@ export function Hero() {
                         </span>
                     </div>
                 </div>
-            </motion.div>
-        </main>
+            </motion.div >
+        </main >
     );
 }

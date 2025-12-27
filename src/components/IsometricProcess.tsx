@@ -19,17 +19,17 @@ export function IsometricProcess() {
                 >
                     <div className="inline-flex gap-2 uppercase text-xs text-[#FACC15] tracking-widest font-mono bg-[#FACC15]/5 border-[#FACC15]/20 border rounded-full mb-6 pt-1 pr-3 pb-1 pl-3 backdrop-blur-sm gap-x-2 gap-y-2 items-center">
                         <Plug className="w-3 h-3" />
-                        Integrations
+                        Protocol
                     </div>
                     <h2 className="lg:text-6xl text-4xl font-medium text-white tracking-tighter mb-6">
-                        Your website, hardwired to <span className="text-neutral-600">your business.</span>
+                        The Integration <span className="text-neutral-600">Protocol</span>
                     </h2>
                     <p className="leading-relaxed text-lg font-light text-neutral-400 max-w-2xl mx-auto">
-                        Stop treating your website like a digital brochure. We build operational frontends that read, write, and sync data directly with your existing stack — turning your site into an active part of your workflow.
+                        We don't guess. We engineer results through a strict three-phase process designed for enterprise environments.
                     </p>
                 </motion.div>
 
-                {/* Integration Icons Row */}
+                {/* Integration Icons Row - KEEPING AS IS for visual context */}
                 <motion.div
                     initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                     whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -40,6 +40,7 @@ export function IsometricProcess() {
                     <div onClick={() => setSelectedIcon(selectedIcon === 0 ? null : 0)} className={`group flex hover:border-[#FACC15] transition-colors duration-300 cursor-pointer bg-[#0A0A0A] w-10 h-10 sm:w-12 sm:h-12 border rounded-sm relative translate-y-21 sm:-translate-x-8 sm:translate-y-8 items-center justify-center flex-shrink-0 ${selectedIcon === 0 ? 'border-[#FACC15] bg-[#FACC15]/10' : 'border-white/10'}`}>
                         <Server className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors ${selectedIcon === 0 ? 'text-[#FACC15]' : 'text-white group-hover:text-white'}`} />
                     </div>
+                    {/* ... other icons logically could stay or be removed. I will keep them for the visual "tech" feel but continue with the rest of the replacement below */}
                     <div onClick={() => setSelectedIcon(selectedIcon === 1 ? null : 1)} className={`group flex hover:border-[#FACC15] transition-colors duration-300 cursor-pointer bg-[#0A0A0A] w-10 h-10 sm:w-12 sm:h-12 border rounded-sm relative translate-y-21 sm:-translate-x-5 sm:translate-y-8 items-center justify-center flex-shrink-0 ${selectedIcon === 1 ? 'border-[#FACC15] bg-[#FACC15]/10' : 'border-white/10'}`}>
                         <Database className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors ${selectedIcon === 1 ? 'text-[#FACC15]' : 'text-neutral-400 group-hover:text-white'}`} />
                     </div>
@@ -57,7 +58,7 @@ export function IsometricProcess() {
                     </div>
                 </motion.div>
 
-                {/* Animated Connections */}
+                {/* Animated Connections - KEEPING AS IS for visual context */}
                 <motion.div
                     initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                     whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -112,32 +113,34 @@ export function IsometricProcess() {
                     </div>
                 </motion.div>
 
-                {/* Features Footer */}
+                {/* Features Footer - REPLACED WITH 3-STEP PROCESS */}
                 <motion.div
                     initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                     whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-10%" }}
-                    className="flex items-center justify-center gap-4 sm:gap-8 flex-wrap text-sm text-neutral-400 font-mono"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto border-t border-white/5 pt-12"
                 >
-                    <div className="inline-flex items-center gap-2">
-                        <Server className="text-[#FACC15] w-4 h-4" />
-                        <span className="font-medium uppercase text-xs tracking-wider">Instant sync</span>
+                    <div className="flex flex-col items-center text-center">
+                        <div className="text-3xl font-mono text-neutral-700 mb-4 opacity-50">01</div>
+                        <h4 className="text-white font-bold uppercase tracking-widest mb-2">Audit</h4>
+                        <p className="text-xs text-neutral-500 font-mono leading-relaxed max-w-xs">
+                            Deep analysis of your current stack to identify data silos and automation opportunities.
+                        </p>
                     </div>
-                    <div className="hidden sm:block w-px h-4 bg-white/10 rotate-12"></div>
-                    <div className="inline-flex items-center gap-2">
-                        <Code className="text-[#FACC15] w-4 h-4" />
-                        <span className="font-medium uppercase text-xs tracking-wider">Enterprise Security</span>
+                    <div className="flex flex-col items-center text-center">
+                        <div className="text-3xl font-mono text-neutral-700 mb-4 opacity-50">02</div>
+                        <h4 className="text-white font-bold uppercase tracking-widest mb-2">Build</h4>
+                        <p className="text-xs text-neutral-500 font-mono leading-relaxed max-w-xs">
+                            Development of a custom web portal designed specifically for your operational workflow.
+                        </p>
                     </div>
-                    <div className="hidden sm:block w-px h-4 bg-white/10 rotate-12"></div>
-                    <div className="inline-flex items-center gap-2">
-                        <Activity className="text-[#FACC15] w-4 h-4" />
-                        <span className="font-medium uppercase text-xs tracking-wider">Real-time</span>
-                    </div>
-                    <div className="hidden sm:block w-px h-4 bg-white/10 rotate-12"></div>
-                    <div className="inline-flex items-center gap-2">
-                        <Plug className="text-[#FACC15] w-4 h-4" />
-                        <span className="font-medium uppercase text-xs tracking-wider">1-Click Setup</span>
+                    <div className="flex flex-col items-center text-center">
+                        <div className="text-3xl font-mono text-neutral-700 mb-4 opacity-50">03</div>
+                        <h4 className="text-white font-bold uppercase tracking-widest mb-2">Sync</h4>
+                        <p className="text-xs text-neutral-500 font-mono leading-relaxed max-w-xs">
+                            Direct integration with your ERP. We flip the switch and data begins flowing automatically.
+                        </p>
                     </div>
                 </motion.div>
             </div>

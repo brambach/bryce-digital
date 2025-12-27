@@ -46,19 +46,19 @@ export function Navbar() {
                         href="#protocols"
                         className="hover:text-[#FACC15] transition-all uppercase text-[10px] font-medium text-neutral-400 tracking-[0.25em] font-mono"
                     >
-                        Protocols
+                        Architectures
                     </a>
                     <a
                         href="#infrastructure"
                         className="hover:text-[#FACC15] transition-all uppercase text-[10px] font-medium text-neutral-400 tracking-[0.25em] font-mono"
                     >
-                        Infrastructure
+                        Methodology
                     </a>
                     <a
                         href="#integrations"
                         className="hover:text-[#FACC15] transition-all uppercase text-[10px] font-medium text-neutral-400 tracking-[0.25em] font-mono"
                     >
-                        Integrations
+                        Stack
                     </a>
                 </div>
             </div>

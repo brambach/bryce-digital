@@ -10,6 +10,8 @@ export function Footer() {
     const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
     const [errorMessage, setErrorMessage] = useState("");
 
+    const currentYear = new Date().getFullYear();
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
@@ -87,8 +89,32 @@ export function Footer() {
                             <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#FACC15]"></div>
 
                             <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-6 font-display">
-                                Initialize Contact Protocol
+                                DEPLOYMENT PROTOCOL
                             </h3>
+
+                            <div className="space-y-4 mb-8 border-b border-white/5 pb-8">
+                                <div className="flex gap-3">
+                                    <span className="text-[#FACC15] font-mono text-xs">01</span>
+                                    <div>
+                                        <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-1">Audit ($997)</h4>
+                                        <p className="text-neutral-500 text-[10px] leading-relaxed">We map your data silos and architect the API layer. You get a technical blueprint, not a sales pitch.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-3">
+                                    <span className="text-neutral-500 font-mono text-xs">02</span>
+                                    <div>
+                                        <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-1">Build (Quote)</h4>
+                                        <p className="text-neutral-500 text-[10px] leading-relaxed">We develop the frontend and middleware. Typical timeline: 4-8 weeks.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-3">
+                                    <span className="text-neutral-500 font-mono text-xs">03</span>
+                                    <div>
+                                        <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-1">Retainer (Optional)</h4>
+                                        <p className="text-neutral-500 text-[10px] leading-relaxed">Ongoing monitoring and uptime guarantees.</p>
+                                    </div>
+                                </div>
+                            </div>
 
                             <form className="space-y-4" onSubmit={handleSubmit}>
                                 <div>
@@ -114,10 +140,10 @@ export function Footer() {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-[10px] text-neutral-500 font-mono uppercase mb-2">Message_Payload</label>
+                                    <label className="block text-[10px] text-neutral-500 font-mono uppercase mb-2">Audit_Scope</label>
                                     <textarea
                                         rows={3}
-                                        placeholder="// Describe your system architecture..."
+                                        placeholder="// Describe your current ERP stack..."
                                         value={formData.message}
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                         className="w-full bg-[#050505] border border-white/10 p-3 text-sm text-white font-mono focus:outline-none focus:border-[#FACC15] transition-colors placeholder:text-neutral-700 resize-none outline-none"
@@ -144,7 +170,7 @@ export function Footer() {
                                     disabled={isSubmitting}
                                     className="w-full bg-[#FACC15] text-black font-bold uppercase tracking-widest text-xs py-4 hover:bg-white hover:text-black transition-all duration-300 font-mono flex justify-center items-center gap-2 group/btn cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    <span>{isSubmitting ? "Transmitting..." : "Transmit Data"}</span>
+                                    <span>{isSubmitting ? "Processing..." : "Book System Audit ($997)"}</span>
                                     {!isSubmitting && <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />}
                                 </button>
                             </form>
@@ -152,16 +178,42 @@ export function Footer() {
                     </div>
                 </motion.div>
 
-                {/* Bottom Copyright Bar */}
-                <div className="border-t border-white/5 bg-[#080808] px-6 lg:px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-4 relative z-20">
-                    <div className="text-[10px] uppercase flex gap-2 text-neutral-600 tracking-widest font-mono gap-x-2 gap-y-2 items-center">
-                        <span className="w-2 h-2 rounded-full bg-[#FACC15]"></span>
-                        © 2025 Bryce Digital. All Systems Operational.
+                {/* Disclaimer Row (Quiet) */}
+                <div className="w-full border-t border-white/5 py-6 bg-[#050505] text-center px-6">
+                    <p className="text-[9px] text-neutral-800 font-mono uppercase tracking-widest max-w-4xl mx-auto leading-relaxed">
+                        // REFERENCE_MODEL: All architectures shown are conceptual implementations demonstrating technical capabilities. Production timelines vary based on ERP API limits. // COMPLIANCE: SOC2_ALIGNED.
+                    </p>
+                </div>
+
+                {/* Final Footer Bar (High Signal / Low Noise) */}
+                <div className="w-full bg-[#050505] px-6 lg:px-12 pb-16 pt-2 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 relative z-20">
+
+                    {/* Zone 1: Identity & Signal */}
+                    <div className="flex items-center gap-4">
+                        <span className="text-sm font-bold text-neutral-300 tracking-tight font-display">Bryce Digital</span>
+                        <div className="h-3 w-px bg-neutral-800"></div>
+                        <div className="flex items-center gap-2 px-2 py-1 rounded bg-green-500/5">
+                            <span className="relative flex h-1.5 w-1.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
+                            </span>
+                            <span className="text-[10px] font-mono font-medium text-green-500/80 tracking-widest uppercase">Operational</span>
+                        </div>
                     </div>
-                    <div className="flex gap-8">
-                        <a href="#" className="text-[10px] text-neutral-600 hover:text-[#FACC15] font-mono uppercase tracking-widest transition-colors cursor-pointer">Privacy_Protocol</a>
-                        <a href="#" className="text-[10px] text-neutral-600 hover:text-[#FACC15] font-mono uppercase tracking-widest transition-colors cursor-pointer">Terms_of_Service</a>
-                        <a href="#" className="text-[10px] text-neutral-600 hover:text-[#FACC15] font-mono uppercase tracking-widest transition-colors cursor-pointer">System_Status</a>
+
+                    {/* Zone 2: System Specs (Static & Ethical) */}
+                    <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 items-center">
+                        <span className="text-[10px] font-mono text-neutral-700 uppercase tracking-wider cursor-default">
+                            ARCHITECTURE: SOC2_ALIGNED
+                        </span>
+                        <span className="text-neutral-800">|</span>
+                        <span className="text-[10px] font-mono text-neutral-700 uppercase tracking-wider cursor-default">
+                            DATA: ENCRYPTED_AT_REST
+                        </span>
+                        <span className="text-neutral-800">|</span>
+                        <span className="text-[10px] font-mono text-neutral-700 uppercase tracking-wider cursor-default">
+                            © {currentYear}
+                        </span>
                     </div>
                 </div>
             </div>

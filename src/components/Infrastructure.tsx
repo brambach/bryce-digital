@@ -1,70 +1,105 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowUpRight, ArrowRight, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface SystemData {
     title: string;
     subtitle: string;
     desc: string;
-    signals: {
-        error: string;
-        latency: string;
-        savings: string;
-    };
+    signals: { label: string; value: string }[];
     tags: string[];
+    img: string;
+    badge: string;
 }
 
 export function Infrastructure() {
     const [activeSystem, setActiveSystem] = useState<SystemData | null>(null);
 
+    // Scroll Lock Effect
+    useEffect(() => {
+        if (activeSystem) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => {
+            document.body.style.overflow = "unset";
+        }
+    }, [activeSystem]);
+
+
     const openSystemPanel = (data: SystemData) => {
         setActiveSystem(data);
+        // Optional: Update URL hash
+        // window.location.hash = `#architecture/${data.title.toLowerCase().replace(/\s+/g, '-')}`;
     };
 
     const closeSystemPanel = () => {
         setActiveSystem(null);
+        // window.history.replaceState(null, '', window.location.pathname);
     };
 
-    // Systems Data
-    const systems = [
+    // Close on Escape Key
+    useEffect(() => {
+        const handleEsc = (e: KeyboardEvent) => {
+            if (e.key === "Escape") closeSystemPanel();
+        };
+        window.addEventListener("keydown", handleEsc);
+        return () => window.removeEventListener("keydown", handleEsc);
+    }, []);
+
+    // Systems Data (Reference Architectures)
+    const systems: SystemData[] = [
         {
-            title: "Automated Ledgering",
-            subtitle: "NETSUITE // STRIPE",
-            desc: "Bilateral synchronization engine ensuring financial data integrity between ERP and payment processors. Eliminates manual reconciliation with 100% accuracy.",
-            signals: { error: "0%", latency: "42ms", savings: "$15K/YR" },
-            tags: ["NetSuite", "Stripe Connect", "Webhooks"],
+            title: "Wholesale Order Portal",
+            subtitle: "REFERENCE_ARCH // COMMERCE",
+            desc: "Bi-directional sync of 50k+ SKUs and customer-specific pricing tiers between NetSuite and a headless Next.js frontend.",
+            signals: [
+                { label: "SYNC_DELAY", value: "<200ms" },
+                { label: "MANUAL_ENTRY", value: "0%" }
+            ],
+            tags: ["Next.js", "NetSuite SuiteTalk", "Redis"],
             img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/Whisk.jpeg?q=80&w=800&auto=format&fit=crop",
-            badge: "ERRORS: 0%",
+            badge: "REFERENCE_ARCH",
         },
         {
-            title: "Client Portal v1",
-            subtitle: "NEXT.JS // SUPABASE",
-            desc: "Secure, high-performance customer interface for accessing real-time project deliverables, invoices, and status updates directly from your database.",
-            signals: { error: "0.01%", latency: "32ms", savings: "$22K/YR" },
-            tags: ["Next.js", "Supabase Auth", "Realtime"],
+            title: "Automated CPQ Interface",
+            subtitle: "REFERENCE_ARCH // SALES",
+            desc: "Client-facing quoting tool that instantly generates Salesforce Opportunities and PDF invoices via Stripe API.",
+            signals: [
+                { label: "ADMIN_SAVINGS", value: "20hrs/wk" },
+                { label: "ACCURACY", value: "100%" }
+            ],
+            tags: ["React", "Salesforce Apex", "Stripe API"],
             img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/computer.jpeg?q=80&w=800&auto=format&fit=crop",
-            badge: "STATUS: LIVE",
+            badge: "REFERENCE_ARCH",
         },
         {
-            title: "Workflow Sync",
-            subtitle: "WORKATO // SLACK",
-            desc: "Event-driven automation pipeline routing critical system alerts and engineering updates directly to designated Slack channels.",
-            signals: { error: "0%", latency: "24ms", savings: "$18K/YR" },
-            tags: ["Workato", "Slack API", "Webhooks"],
+            title: "Real-Time Fulfillment Hub",
+            subtitle: "SYSTEM_MODEL // LOGISTICS",
+            desc: "'Domino's Tracker' for manufacturing. Pulls Work Order status from ERP to frontend instantly via Webhooks.",
+            signals: [
+                { label: "TICKET_DEFLECTION", value: "-80%" },
+                { label: "UPTIME", value: "99.9%" }
+            ],
+            tags: ["Supabase", "Twilio", "ERP Webhooks"],
             img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/Whisk%20(3).jpeg?q=80&w=800&auto=format&fit=crop",
-            badge: "LATENCY: 24ms",
+            badge: "SYSTEM_MODEL",
         },
         {
-            title: "AI Support Agent",
-            subtitle: "OPENAI // PYTHON",
-            desc: "Autonomous Tier-1 support agent powered by vector embeddings, capable of resolving customer inquiries instantly without human oversight.",
-            signals: { error: "1.2%", latency: "800ms", savings: "$40K/YR" },
-            tags: ["OpenAI", "Python", "Vector DB"],
+            title: "Contractor Payout Engine",
+            subtitle: "SYSTEM_MODEL // FINANCE",
+            desc: "Auto-calculates commissions from CRM closed-won deals and stages payroll batches in Gusto.",
+            signals: [
+                { label: "RISK_REDUCTION", value: "HIGH" },
+                { label: "BATCH_TIME", value: "Instant" }
+            ],
+            tags: ["Workato", "HiBob", "Gusto"],
             img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/Whisk%20Image.jpeg?q=80&w=800&auto=format&fit=crop",
-            badge: "SAVED $40K/YR",
+            badge: "SYSTEM_MODEL",
         },
     ];
 
@@ -80,10 +115,10 @@ export function Infrastructure() {
             >
                 <div className="max-w-4xl">
                     <h2 className="md:text-5xl lg:text-7xl text-3xl text-white tracking-tighter font-mono mb-4">
-                        DEPLOYED INFRASTRUCTURE
+                        SYSTEM ARCHITECTURE
                     </h2>
                     <p className="md:text-xl text-lg font-light text-neutral-500 max-w-2xl">
-                        Live systems processing real-time data across enterprise environments.
+                        Conceptual models and reference implementations for high-scale enterprise environments.
                     </p>
                 </div>
                 <div className="uppercase hidden md:block text-xs text-neutral-600 tracking-widest mb-2">
@@ -98,13 +133,13 @@ export function Infrastructure() {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-10%" }}
-                className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:px-12 pr-6 pb-32 pl-6 gap-x-6 gap-y-6"
+                className="grid grid-cols-1 md:grid-cols-2 lg:px-12 pr-6 pb-32 pl-6 gap-x-6 gap-y-6"
             >
                 {systems.map((sys, i) => (
                     <div
                         key={i}
                         onClick={() => openSystemPanel(sys)}
-                        className="group relative h-[500px] rounded-sm overflow-hidden bg-[#0A0A0A] border border-white/5 cursor-pointer hover:border-[#FACC15]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)]"
+                        className="group relative h-[400px] rounded-sm overflow-hidden bg-[#0A0A0A] border border-white/5 cursor-pointer hover:border-[#FACC15]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)]"
                     >
                         <img
                             src={sys.img}
@@ -114,14 +149,7 @@ export function Infrastructure() {
                         <div className="group-hover:opacity-70 transition-opacity duration-500 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent opacity-90 absolute top-0 right-0 bottom-0 left-0"></div>
 
                         <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full text-[10px] font-mono text-[#FACC15] uppercase tracking-wider shadow-xl">
-                            {sys.title === "Client Portal v1" ? (
-                                <div className="flex gap-2 items-center text-green-400">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
-                                    LIVE
-                                </div>
-                            ) : (
-                                sys.badge
-                            )}
+                            {sys.badge}
                         </div>
 
                         <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
@@ -141,92 +169,102 @@ export function Infrastructure() {
                 ))}
             </motion.div>
 
-            {/* System Panel Modal */}
-            {activeSystem && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="absolute inset-0 bg-[#050505]/80 backdrop-blur-md"
-                        onClick={closeSystemPanel}
-                    />
+            {/* Slide-Over System Drawer */}
+            <AnimatePresence>
+                {activeSystem && (
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="fixed inset-0 z-[90] bg-black/60 backdrop-blur-sm"
+                            onClick={closeSystemPanel}
+                        />
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 30, filter: "blur(8px)", scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
-                        exit={{ opacity: 0, y: 30, filter: "blur(8px)", scale: 0.95 }}
-                        transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="relative w-full max-w-2xl bg-[#0A0A0A]/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden flex flex-col"
-                    >
-                        {/* Header */}
-                        <div className="p-8 pb-6 flex justify-between items-start border-b border-white/5">
-                            <div>
-                                <div className="text-[#FACC15] text-[10px] font-bold tracking-[0.25em] font-mono uppercase mb-3">
-                                    SYSTEM PROTOCOL
-                                </div>
-                                <h2 className="text-3xl font-medium text-white tracking-tight font-display">{activeSystem.title}</h2>
-                            </div>
-                            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 shadow-[0_0_15px_rgba(34,197,94,0.2)]">
-                                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                                <span className="text-[10px] font-mono font-semibold text-green-500 uppercase tracking-widest">Live</span>
-                            </div>
-                        </div>
+                        {/* Drawer */}
+                        <motion.div
+                            initial={{ x: "100%" }}
+                            animate={{ x: 0 }}
+                            exit={{ x: "100%" }}
+                            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                            className="fixed top-0 right-0 z-[100] h-full w-full md:w-[600px] bg-[#0A0A0A] border-l border-white/10 shadow-2xl flex flex-col will-change-transform"
+                        >
+                            {/* Close Button */}
+                            <button
+                                onClick={closeSystemPanel}
+                                className="absolute top-6 right-6 p-2 text-neutral-500 hover:text-white transition-colors rounded-full hover:bg-white/5 cursor-pointer z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FACC15]"
+                                aria-label="Close Panel"
+                            >
+                                <X className="w-6 h-6" />
+                            </button>
 
-                        {/* Content */}
-                        <div className="p-8 pt-6 space-y-8">
-                            <div className="space-y-3">
-                                <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Technical Specifications</p>
-                                <p className="text-neutral-300 text-base font-light leading-relaxed">
-                                    {activeSystem.desc}
-                                </p>
-                            </div>
-
-                            <div className="space-y-3">
-                                <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">System Signals</p>
-                                <div className="grid grid-cols-3 gap-px bg-white/10 border border-white/10 rounded overflow-hidden">
-                                    <div className="bg-[#0E0E0E] p-4 flex flex-col gap-1">
-                                        <span className="text-[9px] text-neutral-500 font-mono uppercase tracking-wider">Errors</span>
-                                        <span className="text-lg font-mono text-white tracking-tight">{activeSystem.signals.error}</span>
+                            <div className="p-8 pt-12 flex-1 overflow-y-auto">
+                                {/* Header */}
+                                <div className="mb-12">
+                                    <div className="text-[#FACC15] text-[10px] font-bold tracking-[0.25em] font-mono uppercase mb-4">
+                                        SYSTEM PROTOCOL
                                     </div>
-                                    <div className="bg-[#0E0E0E] p-4 flex flex-col gap-1">
-                                        <span className="text-[9px] text-neutral-500 font-mono uppercase tracking-wider">Latency</span>
-                                        <span className="text-lg font-mono text-white tracking-tight">{activeSystem.signals.latency}</span>
-                                    </div>
-                                    <div className="bg-[#0E0E0E] p-4 flex flex-col gap-1">
-                                        <span className="text-[9px] text-neutral-500 font-mono uppercase tracking-wider">Savings</span>
-                                        <span className="text-lg font-mono text-[#FACC15] tracking-tight">{activeSystem.signals.savings}</span>
+                                    <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight font-display mb-4">{activeSystem.title}</h2>
+                                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FACC15]/5 border border-[#FACC15]/20 shadow-[0_0_15px_rgba(250,204,21,0.1)]">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#FACC15] opacity-50"></span>
+                                        <span className="text-[10px] font-mono font-semibold text-[#FACC15] uppercase tracking-widest">{activeSystem.badge}</span>
                                     </div>
                                 </div>
+
+                                {/* Content */}
+                                <div className="space-y-10">
+                                    <div className="space-y-4">
+                                        <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Architectural Overview</p>
+                                        <p className="text-neutral-300 text-base md:text-lg font-light leading-relaxed text-pretty">
+                                            {activeSystem.desc}
+                                        </p>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Target Telemetry</p>
+                                        <div className="grid grid-cols-2 gap-px bg-white/10 border border-white/10 rounded overflow-hidden">
+                                            {activeSystem.signals.map((signal, idx) => (
+                                                <div key={idx} className="bg-[#0E0E0E] p-4 md:p-6 flex flex-col gap-2">
+                                                    <span className="text-[10px] text-neutral-500 font-mono uppercase tracking-wider">{signal.label}</span>
+                                                    <span className="text-xl md:text-2xl font-mono text-white tracking-tight">{signal.value}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Technology Stack</p>
+                                        <div className="flex flex-wrap gap-2">
+                                            {activeSystem.tags.map((tag, i) => (
+                                                <span key={i} className="px-3 py-1.5 rounded bg-white/5 border border-white/10 text-neutral-300 text-[11px] font-mono uppercase tracking-wider">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Footer */}
-                        <div className="p-8 pt-0 flex flex-col md:flex-row justify-between items-center gap-6">
-                            <div className="flex flex-wrap gap-2">
-                                {activeSystem.tags.map((tag, i) => (
-                                    <span key={i} className="px-2.5 py-1 rounded bg-[#FACC15]/10 border border-[#FACC15]/20 text-[#FACC15] text-[10px] font-mono uppercase tracking-wider">
-                                        {tag}
-                                    </span>
-                                ))}
+                            {/* Footer CTA */}
+                            <div className="p-8 border-t border-white/5 bg-[#050505]">
+                                <a
+                                    href="#audit-section"
+                                    onClick={(e) => { e.preventDefault(); closeSystemPanel(); document.getElementById('audit-section')?.scrollIntoView({ behavior: 'smooth' }); }}
+                                    className="w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FACC15] rounded block"
+                                >
+                                    <button className="w-full bg-[#FACC15] hover:bg-white text-black text-xs font-bold font-mono uppercase tracking-widest py-5 rounded transition-all duration-300 flex items-center justify-center gap-3 group cursor-pointer shadow-[0_0_20px_rgba(250,204,21,0.2)] hover:shadow-[0_0_30px_rgba(250,204,21,0.4)]">
+                                        Initialize Deployment
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                    </button>
+                                </a>
                             </div>
 
-                            <a href="#audit-section" onClick={(e) => { e.preventDefault(); closeSystemPanel(); document.getElementById('audit-section')?.scrollIntoView({ behavior: 'smooth' }); }} className="w-full md:w-auto cursor-pointer">
-                                <button className="w-full bg-[#FACC15] hover:bg-white text-black text-[11px] font-bold font-mono uppercase tracking-widest px-6 py-3 rounded transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer">
-                                    Initialize Contact Protocol
-                                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                                </button>
-                            </a>
-                        </div>
-
-                        <button onClick={closeSystemPanel} className="absolute top-6 right-6 p-2 text-neutral-500 hover:text-white transition-colors rounded-full hover:bg-white/5 cursor-pointer">
-                            <X className="w-4.5 h-4.5" />
-                        </button>
-                    </motion.div>
-                </div>
-            )
-            }
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
         </section >
     );
 }
