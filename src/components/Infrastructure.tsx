@@ -54,50 +54,62 @@ export function Infrastructure() {
     // Systems Data (Reference Architectures)
     const systems: SystemData[] = [
         {
+            title: "Crypto Analytics Dashboard",
+            subtitle: "REFERENCE_ARCH // DATA VIZ",
+            desc: "Interactive 3D data visualization with real-time market feeds. Scroll-triggered animations and WebGL rendering for high-frequency financial data. Built in one weekend to showcase rapid prototyping capability.",
+            signals: [
+                { label: "RENDER_TIME", value: "<16ms" },
+                { label: "INTERACTIONS", value: "60fps" }
+            ],
+            tags: ["React", "Three.js", "WebSocket", "Framer Motion", "TradingView API"],
+            img: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230a0a0a'/%3E%3Cstop offset='50%25' stop-color='%23111'/%3E%3Cstop offset='100%25' stop-color='%230a0a0a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g)' width='800' height='600'/%3E%3C/svg%3E",
+            badge: "FEATURED",
+        },
+        {
             title: "Wholesale Order Portal",
             subtitle: "REFERENCE_ARCH // COMMERCE",
-            desc: "Bi-directional sync of 50k+ SKUs and customer-specific pricing tiers between NetSuite and a headless Next.js frontend.",
+            desc: "Custom commerce interface with real-time inventory visualization. Bi-directional sync of 50k+ SKUs and customer-specific pricing tiers between NetSuite and a headless Next.js frontend.",
             signals: [
                 { label: "SYNC_DELAY", value: "<200ms" },
                 { label: "MANUAL_ENTRY", value: "0%" }
             ],
-            tags: ["Next.js", "NetSuite SuiteTalk", "Redis"],
+            tags: ["React", "Next.js", "Framer Motion", "NetSuite SuiteTalk", "Redis"],
             img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/Whisk.jpeg?q=80&w=800&auto=format&fit=crop",
             badge: "REFERENCE_ARCH",
         },
         {
             title: "Automated CPQ Interface",
             subtitle: "REFERENCE_ARCH // SALES",
-            desc: "Client-facing quoting tool that instantly generates Salesforce Opportunities and PDF invoices via Stripe API.",
+            desc: "Interactive quoting dashboard with animated workflows. Generates Salesforce Opportunities and PDF invoices via Stripe API in real-time.",
             signals: [
                 { label: "ADMIN_SAVINGS", value: "20hrs/wk" },
                 { label: "ACCURACY", value: "100%" }
             ],
-            tags: ["React", "Salesforce Apex", "Stripe API"],
+            tags: ["React", "TypeScript", "Tailwind", "Salesforce Apex", "Stripe API"],
             img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/computer.jpeg?q=80&w=800&auto=format&fit=crop",
             badge: "REFERENCE_ARCH",
         },
         {
             title: "Real-Time Fulfillment Hub",
             subtitle: "SYSTEM_MODEL // LOGISTICS",
-            desc: "'Domino's Tracker' for manufacturing. Pulls Work Order status from ERP to frontend instantly via Webhooks.",
+            desc: "Live 3D order tracking visualization. 'Domino's Tracker' for manufacturing with animated status updates pulled from ERP via webhooks.",
             signals: [
                 { label: "TICKET_DEFLECTION", value: "-80%" },
                 { label: "UPTIME", value: "99.9%" }
             ],
-            tags: ["Supabase", "Twilio", "ERP Webhooks"],
+            tags: ["Next.js", "Three.js", "Supabase", "Twilio", "ERP Webhooks"],
             img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/Whisk%20(3).jpeg?q=80&w=800&auto=format&fit=crop",
             badge: "SYSTEM_MODEL",
         },
         {
             title: "Contractor Payout Engine",
             subtitle: "SYSTEM_MODEL // FINANCE",
-            desc: "Auto-calculates commissions from CRM closed-won deals and stages payroll batches in Gusto.",
+            desc: "Data visualization dashboard for commission tracking. Auto-calculates from CRM closed-won deals and stages payroll batches in Gusto.",
             signals: [
                 { label: "RISK_REDUCTION", value: "HIGH" },
                 { label: "BATCH_TIME", value: "Instant" }
             ],
-            tags: ["Workato", "HiBob", "Gusto"],
+            tags: ["React", "Recharts", "Workato", "HiBob", "Gusto"],
             img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/Whisk%20Image.jpeg?q=80&w=800&auto=format&fit=crop",
             badge: "SYSTEM_MODEL",
         },

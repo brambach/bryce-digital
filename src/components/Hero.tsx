@@ -27,7 +27,7 @@ export function Hero() {
                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                     className="leading-relaxed text-sm md:text-base lg:text-lg font-light text-neutral-400 max-w-md mb-8 md:mb-12"
                 >
-                    We build customer-facing interfaces that write directly to your ERP. Eliminate manual entry between your website and NetSuite, Salesforce, or Stripe.
+                    Beautiful web interfaces that connect directly to your systems. Custom dashboards, portals, and data visualizations built for performance and impact.
                 </motion.p>
 
                 <motion.div
@@ -126,11 +126,11 @@ export function Hero() {
                         className={`cursor-pointer transition-all duration-300 ${activeStat === 0 ? 'opacity-100' : 'opacity-50 hover:opacity-80'}`}
                         onClick={() => setActiveStat(0)}
                     >
-                        <span className={`text-5xl md:text-6xl font-light tracking-tighter block transition-colors duration-300 ${activeStat === 0 ? 'text-[#FACC15] [text-shadow:0_0_20px_rgba(250,204,21,0.3)]' : 'text-neutral-700'}`}>
-                            24/7<span className="text-3xl"></span>
+                        <span className={`text-4xl md:text-5xl font-light tracking-tighter block transition-colors duration-300 ${activeStat === 0 ? 'text-[#FACC15] [text-shadow:0_0_20px_rgba(250,204,21,0.3)]' : 'text-neutral-700'}`}>
+                            Custom
                         </span>
                         <span className="uppercase block text-[10px] md:text-xs text-neutral-500 tracking-widest mt-1 md:mt-2 pl-1">
-                            AUTOMATED UPTIME
+                            BESPOKE INTERFACES
                         </span>
                     </div>
 
@@ -139,11 +139,11 @@ export function Hero() {
                         className={`lg:border-t border-white/5 border-dashed lg:pt-8 cursor-pointer transition-all duration-300 ${activeStat === 1 ? 'opacity-100' : 'opacity-50 hover:opacity-80'}`}
                         onClick={() => setActiveStat(1)}
                     >
-                        <span className={`text-5xl md:text-6xl font-light tracking-tighter block transition-colors duration-300 ${activeStat === 1 ? 'text-[#FACC15] [text-shadow:0_0_20px_rgba(250,204,21,0.3)]' : 'text-neutral-700'}`}>
-                            100<span className="text-3xl">%</span>
+                        <span className={`text-4xl md:text-5xl font-light tracking-tighter block transition-colors duration-300 ${activeStat === 1 ? 'text-[#FACC15] [text-shadow:0_0_20px_rgba(250,204,21,0.3)]' : 'text-neutral-700'}`}>
+                            100<span className="text-2xl">%</span>
                         </span>
                         <span className="text-[10px] md:text-xs text-neutral-500 uppercase tracking-widest mt-1 md:mt-2 block pl-1">
-                            DATA ACCURACY
+                            DATA INTEGRITY
                         </span>
                     </div>
 
@@ -152,11 +152,11 @@ export function Hero() {
                         className={`lg:border-t border-white/5 border-dashed lg:pt-8 cursor-pointer transition-all duration-300 ${activeStat === 2 ? 'opacity-100' : 'opacity-50 hover:opacity-80'}`}
                         onClick={() => setActiveStat(2)}
                     >
-                        <span className={`text-5xl md:text-6xl font-light tracking-tighter block transition-colors duration-300 ${activeStat === 2 ? 'text-[#FACC15] [text-shadow:0_0_20px_rgba(250,204,21,0.3)]' : 'text-neutral-700'}`}>
+                        <span className={`text-4xl md:text-5xl font-light tracking-tighter block transition-colors duration-300 ${activeStat === 2 ? 'text-[#FACC15] [text-shadow:0_0_20px_rgba(250,204,21,0.3)]' : 'text-neutral-700'}`}>
                             Zero
                         </span>
                         <span className="text-[10px] md:text-xs text-neutral-500 uppercase tracking-widest mt-1 md:mt-2 block pl-1">
-                            MANUAL ENTRY
+                            MANUAL SYNC
                         </span>
                     </div>
                 </div>

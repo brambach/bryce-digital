@@ -19,8 +19,8 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bryce Digital | Operational Systems",
-  description: "Systems Defined By Data",
+  title: "Bryce Digital | Custom Web Interfaces",
+  description: "Custom Web Interfaces. Enterprise Integrations.",
   icons: {
     icon: "/icon.svg",
   },

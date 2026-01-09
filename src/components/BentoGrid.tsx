@@ -52,9 +52,9 @@ export function BentoGrid() {
                         </div>
 
                         <div className="p-6 border-t border-white/5 bg-[#080808] relative z-10">
-                            <h3 className="uppercase text-sm font-bold text-white tracking-widest mb-1">REAL-TIME SYNC</h3>
+                            <h3 className="uppercase text-sm font-bold text-white tracking-widest mb-1">CUSTOM INTERFACES</h3>
                             <p className="text-xs text-neutral-400 font-mono text-pretty">
-                                Inventory and pricing update instantly via webhooks. No batch jobs, no waiting. Real-time syncing for real-time business.
+                                Dashboards, portals, and data visualizations designed from scratch. Three.js, scroll animations, and interactive experiences—not cookie-cutter templates.
                             </p>
                         </div>
                     </div>
@@ -80,9 +80,9 @@ export function BentoGrid() {
                         </div>
 
                         <div className="p-6 border-t border-white/5 bg-[#080808] relative z-10">
-                            <h3 className="text-sm text-white font-bold uppercase tracking-widest mb-1">STRICT VALIDATION</h3>
+                            <h3 className="text-sm text-white font-bold uppercase tracking-widest mb-1">REAL-TIME SYNC</h3>
                             <p className="text-xs text-neutral-400 font-mono text-pretty">
-                                Orders cannot be placed if stock is missing or credit limits are exceeded. Financial data is always perfectly aligned.
+                                Inventory and pricing update instantly via webhooks. No batch jobs, no waiting. Financial data always perfectly aligned.
                             </p>
                         </div>
                     </div>

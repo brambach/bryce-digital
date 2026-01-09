@@ -72,22 +72,22 @@ export function Comparisons() {
                             <div className="flex gap-4 items-start">
                                 <Check className="w-5 h-5 text-[#FACC15] mt-1 shrink-0" />
                                 <div>
+                                    <h4 className="text-white font-mono text-sm uppercase tracking-wider mb-1">Unforgettable Interfaces</h4>
+                                    <p className="text-neutral-400 text-sm leading-relaxed">Custom-built dashboards and portals with 3D visualizations, scroll animations, and interactive data displays. Not template-based—engineered for impact.</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-4 items-start">
+                                <Check className="w-5 h-5 text-[#FACC15] mt-1 shrink-0" />
+                                <div>
+                                    <h4 className="text-white font-mono text-sm uppercase tracking-wider mb-1">Real-Time Data Layer</h4>
+                                    <p className="text-neutral-400 text-sm leading-relaxed">Inventory, pricing, and order status pulled live from your ERP. Always accurate, always fast.</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-4 items-start">
+                                <Check className="w-5 h-5 text-[#FACC15] mt-1 shrink-0" />
+                                <div>
                                     <h4 className="text-white font-mono text-sm uppercase tracking-wider mb-1">Zero Manual Entry</h4>
-                                    <p className="text-neutral-400 text-sm leading-relaxed">The website acts as a secure API wrapper. Users interact directly with live inventory and pricing logic from your database.</p>
-                                </div>
-                            </div>
-                            <div className="flex gap-4 items-start">
-                                <Check className="w-5 h-5 text-[#FACC15] mt-1 shrink-0" />
-                                <div>
-                                    <h4 className="text-white font-mono text-sm uppercase tracking-wider mb-1">Real-Time Sync</h4>
-                                    <p className="text-neutral-400 text-sm leading-relaxed">Inventory, pricing, and order status are pulled live from your ERP. Always 100% accurate.</p>
-                                </div>
-                            </div>
-                            <div className="flex gap-4 items-start">
-                                <Check className="w-5 h-5 text-[#FACC15] mt-1 shrink-0" />
-                                <div>
-                                    <h4 className="text-white font-mono text-sm uppercase tracking-wider mb-1">Unified System</h4>
-                                    <p className="text-neutral-400 text-sm leading-relaxed">Your website acts as a direct extension of your internal operations software.</p>
+                                    <p className="text-neutral-400 text-sm leading-relaxed">Your website acts as a secure API wrapper. Users interact directly with live data from your systems.</p>
                                 </div>
                             </div>
                         </div>

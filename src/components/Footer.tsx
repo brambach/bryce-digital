@@ -72,8 +72,8 @@ export function Footer() {
                 >
                     <div className="lg:col-span-7 flex flex-col justify-center">
                         <h2 className="lg:text-[6rem] leading-[0.9] text-5xl font-normal text-white tracking-tighter mb-12">
-                            Systematic.
-                            <span className="text-neutral-600 block">Scalable.</span>
+                            Beautiful.
+                            <span className="text-neutral-600 block">Bulletproof.</span>
                             Automated.
                         </h2>
 
@@ -115,7 +115,7 @@ export function Footer() {
                                     <span className="text-neutral-500 font-mono text-xs">02</span>
                                     <div>
                                         <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-1">Build (Quote)</h4>
-                                        <p className="text-neutral-500 text-[10px] leading-relaxed">We develop the frontend and middleware. Typical timeline: 4-8 weeks.</p>
+                                        <p className="text-neutral-500 text-[10px] leading-relaxed">Custom interface design and development. Dashboards, portals, and data visualizations built from scratch. Typical timeline: 4-8 weeks.</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-3">

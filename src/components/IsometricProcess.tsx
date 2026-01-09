@@ -130,9 +130,9 @@ export function IsometricProcess() {
                     </div>
                     <div className="flex flex-col items-center text-center">
                         <div className="text-3xl font-mono text-neutral-700 mb-4 opacity-50">02</div>
-                        <h4 className="text-white font-bold uppercase tracking-widest mb-2">Build</h4>
+                        <h4 className="text-white font-bold uppercase tracking-widest mb-2">Design + Build</h4>
                         <p className="text-xs text-neutral-500 font-mono leading-relaxed max-w-xs">
-                            Development of a custom web portal designed specifically for your operational workflow.
+                            Custom interface design and development. Dashboards, portals, and visualizations engineered for your workflow.
                         </p>
                     </div>
                     <div className="flex flex-col items-center text-center">
