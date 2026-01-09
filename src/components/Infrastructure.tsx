@@ -62,58 +62,10 @@ export function Infrastructure() {
                 { label: "INTERACTIONS", value: "60fps" }
             ],
             tags: ["React", "Three.js", "WebSocket", "Framer Motion", "TradingView API"],
-            img: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230a0a0a'/%3E%3Cstop offset='50%25' stop-color='%23111'/%3E%3Cstop offset='100%25' stop-color='%230a0a0a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g)' width='800' height='600'/%3E%3C/svg%3E",
+            img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/cryptoDashboardImage.png",
             badge: "FEATURED",
         },
-        {
-            title: "Wholesale Order Portal",
-            subtitle: "REFERENCE_ARCH // COMMERCE",
-            desc: "Custom commerce interface with real-time inventory visualization. Bi-directional sync of 50k+ SKUs and customer-specific pricing tiers between NetSuite and a headless Next.js frontend.",
-            signals: [
-                { label: "SYNC_DELAY", value: "<200ms" },
-                { label: "MANUAL_ENTRY", value: "0%" }
-            ],
-            tags: ["React", "Next.js", "Framer Motion", "NetSuite SuiteTalk", "Redis"],
-            img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/Whisk.jpeg?q=80&w=800&auto=format&fit=crop",
-            badge: "REFERENCE_ARCH",
-        },
-        {
-            title: "Automated CPQ Interface",
-            subtitle: "REFERENCE_ARCH // SALES",
-            desc: "Interactive quoting dashboard with animated workflows. Generates Salesforce Opportunities and PDF invoices via Stripe API in real-time.",
-            signals: [
-                { label: "ADMIN_SAVINGS", value: "20hrs/wk" },
-                { label: "ACCURACY", value: "100%" }
-            ],
-            tags: ["React", "TypeScript", "Tailwind", "Salesforce Apex", "Stripe API"],
-            img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/computer.jpeg?q=80&w=800&auto=format&fit=crop",
-            badge: "REFERENCE_ARCH",
-        },
-        {
-            title: "Real-Time Fulfillment Hub",
-            subtitle: "SYSTEM_MODEL // LOGISTICS",
-            desc: "Live 3D order tracking visualization. 'Domino's Tracker' for manufacturing with animated status updates pulled from ERP via webhooks.",
-            signals: [
-                { label: "TICKET_DEFLECTION", value: "-80%" },
-                { label: "UPTIME", value: "99.9%" }
-            ],
-            tags: ["Next.js", "Three.js", "Supabase", "Twilio", "ERP Webhooks"],
-            img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/Whisk%20(3).jpeg?q=80&w=800&auto=format&fit=crop",
-            badge: "SYSTEM_MODEL",
-        },
-        {
-            title: "Contractor Payout Engine",
-            subtitle: "SYSTEM_MODEL // FINANCE",
-            desc: "Data visualization dashboard for commission tracking. Auto-calculates from CRM closed-won deals and stages payroll batches in Gusto.",
-            signals: [
-                { label: "RISK_REDUCTION", value: "HIGH" },
-                { label: "BATCH_TIME", value: "Instant" }
-            ],
-            tags: ["React", "Recharts", "Workato", "HiBob", "Gusto"],
-            img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/Whisk%20Image.jpeg?q=80&w=800&auto=format&fit=crop",
-            badge: "SYSTEM_MODEL",
-        },
-    ];
+            ];
 
     return (
         <section className="bg-[#050505] w-full border-white/5 border-t relative">
@@ -145,13 +97,13 @@ export function Infrastructure() {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-10%" }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:px-12 pr-6 pb-32 pl-6 gap-x-6 gap-y-6"
+                className="flex flex-col items-center lg:px-12 pr-6 pb-16 pl-6"
             >
                 {systems.map((sys, i) => (
                     <div
                         key={i}
                         onClick={() => openSystemPanel(sys)}
-                        className="group relative h-[400px] rounded-sm overflow-hidden bg-[#0A0A0A] border border-white/5 cursor-pointer hover:border-[#FACC15]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)]"
+                        className="group relative w-full max-w-3xl h-[500px] rounded-sm overflow-hidden bg-[#0A0A0A] border border-white/5 cursor-pointer hover:border-[#FACC15]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)]"
                     >
                         <img
                             src={sys.img}
@@ -179,6 +131,14 @@ export function Infrastructure() {
                         </div>
                     </div>
                 ))}
+
+                <p className="text-center text-neutral-500 text-sm font-mono mt-12 max-w-xl">
+                    Additional projects in development. Building in public—follow along on{" "}
+                    <a href="https://twitter.com/brycedigital" className="text-[#FACC15] hover:underline">Twitter @brycedigital</a>
+                    {" "}or check{" "}
+                    <a href="https://github.com/brycedigital" className="text-[#FACC15] hover:underline">GitHub</a>
+                    {" "}for more work.
+                </p>
             </motion.div>
 
             {/* Slide-Over System Drawer */}
