@@ -63,7 +63,7 @@ export function Infrastructure() {
             ],
             tags: ["React", "Three.js", "WebSocket", "Framer Motion", "TradingView API"],
             img: "https://vdhdjvkkrmrscnncmwxc.supabase.co/storage/v1/object/public/Images/cryptoDashboardImage.png",
-            badge: "FEATURED",
+            badge: "LIVE PROJECT",
         },
             ];
 
@@ -114,6 +114,20 @@ export function Infrastructure() {
 
                         <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full text-[10px] font-mono text-[#FACC15] uppercase tracking-wider shadow-xl">
                             {sys.badge}
+                        </div>
+
+                        {/* Live Demo Button */}
+                        <div className="absolute inset-0 flex items-center justify-center z-10">
+                            <a
+                                href="https://crypto-dashboard-9vuhh7e2a-bryce-rambachs-projects.vercel.app"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-[#FACC15] hover:bg-white text-black font-bold font-mono uppercase tracking-widest px-8 py-4 rounded text-sm flex items-center gap-3 shadow-[0_0_30px_rgba(250,204,21,0.3)] hover:shadow-[0_0_40px_rgba(250,204,21,0.5)] hover:scale-105 transform"
+                            >
+                                View Live Demo
+                                <ArrowUpRight className="w-4 h-4" />
+                            </a>
                         </div>
 
                         <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
@@ -220,14 +234,25 @@ export function Infrastructure() {
                             </div>
 
                             {/* Footer CTA */}
-                            <div className="p-8 border-t border-white/5 bg-[#050505]">
+                            <div className="p-8 border-t border-white/5 bg-[#050505] space-y-4">
                                 <a
-                                    href="#audit-section"
-                                    onClick={(e) => { e.preventDefault(); closeSystemPanel(); document.getElementById('audit-section')?.scrollIntoView({ behavior: 'smooth' }); }}
+                                    href="https://crypto-dashboard-9vuhh7e2a-bryce-rambachs-projects.vercel.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FACC15] rounded block"
                                 >
                                     <button className="w-full bg-[#FACC15] hover:bg-white text-black text-xs font-bold font-mono uppercase tracking-widest py-5 rounded transition-all duration-300 flex items-center justify-center gap-3 group cursor-pointer shadow-[0_0_20px_rgba(250,204,21,0.2)] hover:shadow-[0_0_30px_rgba(250,204,21,0.4)]">
-                                        Initialize Deployment
+                                        View Live Demo
+                                        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                    </button>
+                                </a>
+                                <a
+                                    href="#audit-section"
+                                    onClick={(e) => { e.preventDefault(); closeSystemPanel(); document.getElementById('audit-section')?.scrollIntoView({ behavior: 'smooth' }); }}
+                                    className="w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded block"
+                                >
+                                    <button className="w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white text-xs font-bold font-mono uppercase tracking-widest py-5 rounded transition-all duration-300 flex items-center justify-center gap-3 group cursor-pointer">
+                                        Book System Audit
                                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                     </button>
                                 </a>
