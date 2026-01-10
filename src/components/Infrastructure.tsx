@@ -119,7 +119,7 @@ export function Infrastructure() {
                         {/* Live Demo Button */}
                         <div className="absolute inset-0 flex items-center justify-center z-10">
                             <a
-                                href="https://crypto-dashboard-9vuhh7e2a-bryce-rambachs-projects.vercel.app"
+                                href="https://crypto-dashboard-rouge-zeta.vercel.app"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
@@ -236,7 +236,7 @@ export function Infrastructure() {
                             {/* Footer CTA */}
                             <div className="p-8 border-t border-white/5 bg-[#050505] space-y-4">
                                 <a
-                                    href="https://crypto-dashboard-9vuhh7e2a-bryce-rambachs-projects.vercel.app"
+                                    href="https://crypto-dashboard-rouge-zeta.vercel.app"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FACC15] rounded block"
