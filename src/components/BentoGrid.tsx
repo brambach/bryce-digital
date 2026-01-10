@@ -29,14 +29,15 @@ export function BentoGrid() {
                 </a>
             </motion.div>
 
-            <div className="w-full overflow-x-auto pb-12 px-6 lg:px-12 flex gap-6 snap-x snap-mandatory scrollbar-hide">
+            <div className="w-full overflow-x-auto pb-12 px-4 sm:px-6 lg:px-12 flex gap-6 snap-x snap-mandatory scrollbar-hide">
                 {/* Card 1: Speed */}
                 <motion.div
                     initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                     whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-10%" }}
-                    className="snap-center shrink-0 w-[300px] md:w-[380px] group"
+                    className="snap-center shrink-0 w-[280px] sm:w-[300px] md:w-[380px] group"
                 >
                     <div
                         onClick={() => setSelectedCard(selectedCard === 0 ? null : 0)}
@@ -64,9 +65,10 @@ export function BentoGrid() {
                 <motion.div
                     initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                     whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-10%" }}
-                    className="snap-center shrink-0 w-[300px] md:w-[380px] group"
+                    className="snap-center shrink-0 w-[280px] sm:w-[300px] md:w-[380px] group"
                 >
                     <div
                         onClick={() => setSelectedCard(selectedCard === 1 ? null : 1)}
@@ -92,9 +94,10 @@ export function BentoGrid() {
                 <motion.div
                     initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                     whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-10%" }}
-                    className="snap-center shrink-0 w-[300px] md:w-[380px] group"
+                    className="snap-center shrink-0 w-[280px] sm:w-[300px] md:w-[380px] group"
                 >
                     <div
                         onClick={() => setSelectedCard(selectedCard === 2 ? null : 2)}

@@ -66,12 +66,12 @@ export function Navbar() {
             <div className="flex items-center gap-6">
                 <a
                     href="#audit-section"
-                    className="group flex items-center gap-3 hover:bg-[#FACC15] transition-all duration-300 bg-white rounded-full pt-1 pr-1 pb-1 pl-4 cursor-pointer"
+                    className="group flex items-center gap-3 hover:bg-[#FACC15] transition-all duration-300 bg-white rounded-full pt-1 pr-1 pb-1 pl-4 cursor-pointer min-h-[44px]"
                 >
-                    <span className="text-[10px] uppercase font-bold text-black tracking-widest">
+                    <span className="text-xs uppercase font-bold text-black tracking-widest">
                         Initialize Audit
                     </span>
-                    <div className="bg-black text-white w-8 h-8 rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
+                    <div className="bg-black text-white w-10 h-10 rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
                         <ArrowUpRight className="w-4 h-4" strokeWidth={3} />
                     </div>
                 </a>

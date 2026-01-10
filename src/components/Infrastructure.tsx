@@ -100,10 +100,11 @@ export function Infrastructure() {
                 className="flex flex-col items-center lg:px-12 pr-6 pb-16 pl-6"
             >
                 {systems.map((sys, i) => (
-                    <div
+                    <motion.div
                         key={i}
                         onClick={() => openSystemPanel(sys)}
-                        className="group relative w-full max-w-3xl h-[500px] rounded-sm overflow-hidden bg-[#0A0A0A] border border-white/5 cursor-pointer hover:border-[#FACC15]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)]"
+                        whileTap={{ scale: 0.99 }}
+                        className="group relative w-full max-w-3xl h-[400px] sm:h-[450px] lg:h-[500px] rounded-sm overflow-hidden bg-[#0A0A0A] border border-white/5 cursor-pointer hover:border-[#FACC15]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(250,204,21,0.1)]"
                     >
                         <img
                             src={sys.img}
@@ -123,7 +124,7 @@ export function Infrastructure() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
-                                className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-[#FACC15] hover:bg-white text-black font-bold font-mono uppercase tracking-widest px-8 py-4 rounded text-sm flex items-center gap-3 shadow-[0_0_30px_rgba(250,204,21,0.3)] hover:shadow-[0_0_40px_rgba(250,204,21,0.5)] hover:scale-105 transform"
+                                className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 bg-[#FACC15] hover:bg-white text-black font-bold font-mono uppercase tracking-widest px-8 py-4 rounded text-sm flex items-center gap-3 shadow-[0_0_30px_rgba(250,204,21,0.3)] hover:shadow-[0_0_40px_rgba(250,204,21,0.5)] hover:scale-105 transform"
                             >
                                 View Live Demo
                                 <ArrowUpRight className="w-4 h-4" />
@@ -143,7 +144,7 @@ export function Infrastructure() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
 
                 <p className="text-center text-neutral-500 text-sm font-mono mt-12 max-w-xl">

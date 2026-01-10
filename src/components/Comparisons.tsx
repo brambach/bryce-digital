@@ -18,14 +18,14 @@ export function Comparisons() {
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
                     {/* The Old Way */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="bg-[#0A0A0A] border border-white/5 p-8 lg:p-12 relative overflow-hidden group"
+                        className="bg-[#0A0A0A] border border-white/5 p-6 sm:p-8 lg:p-12 relative overflow-hidden group"
                     >
                         <div className="absolute top-0 left-0 w-full h-1 bg-neutral-800"></div>
                         <h3 className="text-xl font-mono text-neutral-500 uppercase tracking-widest mb-2">The Legacy Model</h3>
@@ -62,7 +62,7 @@ export function Comparisons() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="bg-[#0A0A0A] border border-[#FACC15]/20 p-8 lg:p-12 relative overflow-hidden shadow-[0_0_50px_rgba(250,204,21,0.05)]"
+                        className="bg-[#0A0A0A] border border-[#FACC15]/20 p-6 sm:p-8 lg:p-12 relative overflow-hidden shadow-[0_0_50px_rgba(250,204,21,0.05)]"
                     >
                         <div className="absolute top-0 left-0 w-full h-1 bg-[#FACC15]"></div>
                         <h3 className="text-xl font-mono text-[#FACC15] uppercase tracking-widest mb-2">The Integrated Standard</h3>

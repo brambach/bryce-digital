@@ -78,13 +78,13 @@ export function Footer() {
                         </h2>
 
                         <div className="flex gap-6 text-white/40 transition-all duration-500">
-                            <a href="https://github.com/brambach" target="_blank" rel="noopener noreferrer" className="hover:text-[#FACC15] hover:opacity-100 transition-all duration-300 cursor-pointer">
+                            <a href="https://github.com/brambach" target="_blank" rel="noopener noreferrer" className="hover:text-[#FACC15] hover:opacity-100 transition-all duration-300 cursor-pointer p-3">
                                 <Github className="w-6 h-6" />
                             </a>
-                            <a href="https://x.com/brycedigital" target="_blank" rel="noopener noreferrer" className="hover:text-[#FACC15] hover:opacity-100 transition-all duration-300 cursor-pointer">
+                            <a href="https://x.com/brycedigital" target="_blank" rel="noopener noreferrer" className="hover:text-[#FACC15] hover:opacity-100 transition-all duration-300 cursor-pointer p-3">
                                 <XIcon className="w-6 h-6" />
                             </a>
-                            <a href="https://linkedin.com/in/bryce-rambach" target="_blank" rel="noopener noreferrer" className="hover:text-[#FACC15] hover:opacity-100 transition-all duration-300 cursor-pointer">
+                            <a href="https://linkedin.com/in/bryce-rambach" target="_blank" rel="noopener noreferrer" className="hover:text-[#FACC15] hover:opacity-100 transition-all duration-300 cursor-pointer p-3">
                                 <Linkedin className="w-6 h-6" />
                             </a>
                         </div>
@@ -135,7 +135,7 @@ export function Footer() {
                                         placeholder="enter name"
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                        className="w-full bg-[#050505] border border-white/10 p-3 text-sm text-white font-mono focus:outline-none focus:border-[#FACC15] transition-colors placeholder:text-neutral-700 outline-none"
+                                        className="w-full bg-[#050505] border border-white/10 py-4 px-3 text-sm text-white font-mono focus:outline-none focus:border-[#FACC15] transition-colors placeholder:text-neutral-700 outline-none"
                                         required
                                     />
                                 </div>
@@ -146,7 +146,7 @@ export function Footer() {
                                         placeholder="enter@email.com"
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                        className="w-full bg-[#050505] border border-white/10 p-3 text-sm text-white font-mono focus:outline-none focus:border-[#FACC15] transition-colors placeholder:text-neutral-700 outline-none"
+                                        className="w-full bg-[#050505] border border-white/10 py-4 px-3 text-sm text-white font-mono focus:outline-none focus:border-[#FACC15] transition-colors placeholder:text-neutral-700 outline-none"
                                         required
                                     />
                                 </div>
@@ -157,7 +157,7 @@ export function Footer() {
                                         placeholder="// Describe your current ERP stack..."
                                         value={formData.message}
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                        className="w-full bg-[#050505] border border-white/10 p-3 text-sm text-white font-mono focus:outline-none focus:border-[#FACC15] transition-colors placeholder:text-neutral-700 resize-none outline-none"
+                                        className="w-full bg-[#050505] border border-white/10 py-4 px-3 text-sm text-white font-mono focus:outline-none focus:border-[#FACC15] transition-colors placeholder:text-neutral-700 resize-none outline-none"
                                         required
                                     ></textarea>
                                 </div>

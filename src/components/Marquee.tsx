@@ -95,7 +95,7 @@ export function Marquee() {
             >
                 <div className="flex gap-4 opacity-70 gap-x-4 gap-y-4 items-center">
                     <div className="h-px w-12 bg-gradient-to-r from-transparent to-neutral-700"></div>
-                    <p className="text-[10px] uppercase whitespace-nowrap md:text-xs text-neutral-500 tracking-[0.25em] font-mono">
+                    <p className="text-xs uppercase whitespace-nowrap md:text-sm text-neutral-500 tracking-[0.25em] font-mono">
                         Built with modern frameworks. Hardwired into your existing systems.
                     </p>
                     <div className="h-px w-12 bg-gradient-to-l from-transparent to-neutral-700"></div>

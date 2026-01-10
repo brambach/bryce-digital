@@ -25,7 +25,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                    className="leading-relaxed text-sm md:text-base lg:text-lg font-light text-neutral-400 max-w-md mb-8 md:mb-12"
+                    className="leading-relaxed text-sm md:text-base lg:text-lg font-light text-neutral-400 max-w-sm sm:max-w-md md:max-w-lg mb-8 md:mb-12"
                 >
                     Beautiful web interfaces that connect directly to your systems. Custom dashboards, portals, and data visualizations built for performance and impact.
                 </motion.p>
@@ -42,7 +42,7 @@ export function Hero() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>
                     </a>
-                    <p className="text-[10px] text-neutral-400 font-mono uppercase tracking-wide text-balance">
+                    <p className="text-xs text-neutral-400 font-mono uppercase tracking-wide text-balance">
                         *30-day delivery timeline. Guaranteed operational efficiency.*
                     </p>
                 </motion.div>
